@@ -43,5 +43,35 @@
   <button class="add_name">+</button>
   <ul class="names"></ul>
 
+
+<script src="../_assets/js/jquery-3.3.1.min.js"></script>
+
+<script>
+  $('.add_name').on('click', function(){
+    var data = prompt ('Por favor agrega un nombre a la lista', 'Harry Potter');
+    $('.names').append('<li><span>'+ data +'</span> <a href="#" class="remove_name">Eliminar</a></li>' )
+  });
+
+
+  $('.names').on('click', 'a[href="#"]', function(event){
+    event.preventDefault();
+  });
+
+
+  $('.names').on('click', '.remove_name', function(event){
+    event.preventDefault();
+    $(this).parent().remove();
+  });
+
+
+   /*  UNIENDO LOS 2 ULTIMOS
+
+    $('.names').on('click', 'a[href="#"]', function(event){
+    event.preventDefault();
+    $(this).parent().remove();
+    */
+
+
+</script>
 </body>
 </html>

@@ -112,5 +112,24 @@
     </li>
   </ul>
 
+
+<script src="../_assets/js/jquery-3.3.1.min.js"></script>
+
+<script>
+
+  $('.social__like').on('click', function(event){
+    event.preventDefault();
+    $(this).toggleClass('social__like--clicked'); 
+    // no es necesario agregar el . a la clase, porque al poner .toggleClass ya indica que estas llamando a una clase, si lo pongo generaria un error
+  });
+
+ $('.social__link').on('click', function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    var alerta = $(this).parent().parent().siblings('.meals__img').attr('alt');
+    alert(alerta);
+  });   
+
+</script>
 </body>
 </html>

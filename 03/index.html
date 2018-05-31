@@ -43,6 +43,7 @@
 	<meta charset="utf-8">
 	<title>Ejercicio 03</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+	<script src="../_assets/js/jquery-3.3.1.min.js"></script>
 <body>
 
 	<nav class="navbar">
@@ -60,6 +61,70 @@
 			<li><a href="#">link 9</a></li>
 		</ul>
 	</nav>
+
+	<script>
+	$(".navbar").children("ul").children().eq(3).children().append(
+		'<ul>'
+		+'<li>'
+		+'<a href="#">'
+		+'link 4.a'
+		+'</a>'
+		+'</li>'
+		+'</ul>');	
+	/*
+	$('li:nth-child(4)').append('<ul><li><a href="#">link 4.a</a></li></ul>');
+	*/
+
+	$(".navbar").children("ul").children().eq(3).children().before(
+		'<li>'
+		+'<a href="#">'
+		+'link 3.5'
+		+'</a>'
+		+'</li>');
+	/*
+	$('li:nth-child(4)').before('<li><a href="#">link 3.5</a></li>');
+	*/
+
+
+	$(".navbar").children("ul").children().eq(5).children().prepend('😎');
+	/*
+	$('li:nth-child(7)').prepend('😎');
+	*/
+
+
+	$(".navbar").children("ul").children().eq(5).children().after('🙂');
+	/*
+	$('li:nth-child(7)').after('🙂');
+	*/
+
+
+	/* TODOS JUNTOS
+
+	$('li:nth-child(4)')
+		.append('<ul><li><a href="#">link 4.a</a></li></ul>')
+		.before('<li><a href="#">link 3.5</a></li>');
+	$('li:nth-child(7)')   // Son 7 porque al ponerle un .before agrego 1 li 
+		.prepend('😎')
+		.after('🙂');
+	*/
+
+
+
+	/* CON VARIABLES
+
+	var seleccion1 = $('li:nth-child(4)');
+	var seleccion2 = $('li:nth-child(6)');
+
+	seleccion1.append('<ul><li><a href="#">link 4.a</a></li></ul>')
+	seleccion1.before('<li><a href="#">link 3.5</a></li>');
+	seleccion2.prepend('😎')
+	seleccion2.after('🙂');
+	*/
+	</script>
+
+
+
+
 
 </body>
 </html>
